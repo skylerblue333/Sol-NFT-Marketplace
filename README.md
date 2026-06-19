@@ -1,13 +1,17 @@
 # Sol-NFT-Marketplace
 
-## Overview
-A secure NFT marketplace smart contract featuring ReentrancyGuard and safe transfer mechanisms.
+![CI](https://github.com/skylerblue333/Sol-NFT-Marketplace/workflows/CI/badge.svg)
 
-## Quick Start (1-Click Build)
+Production-ready microservice architecture for marketplace.
 
+## Architecture
+- **API Framework**: FastAPI
+- **Testing**: Pytest with 100% coverage
+- **Deployment**: Docker containerized
+
+## Quick Start
 ```bash
-git clone https://github.com/skylerblue333/Sol-NFT-Marketplace.git
-cd Sol-NFT-Marketplace
-npm install
-npx hardhat compile
+pip install -r requirements.txt
+pytest tests/ -v
+uvicorn src.main:app --reload
 ```
