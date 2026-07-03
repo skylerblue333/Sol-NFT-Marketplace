@@ -1,22 +1,34 @@
 # Sol-NFT-Marketplace
 
-![CI](https://github.com/skylerblue333/Sol-NFT-Marketplace/workflows/CI/badge.svg)
-![Solidity](https://img.shields.io/badge/Solidity-0.8.20-363636.svg)
-![Hardhat](https://img.shields.io/badge/Hardhat-Ready-yellow.svg)
+Smart contracts for buying/selling ERC721 tokens securely.
 
-A gas-optimized, secure smart contract for decentralized NFT trading.
+## 🚀 Overview
+This repository contains a professional implementation of **Sol NFT Marketplace**. It is designed with clean code principles and focuses on functionality and reliability.
 
-## System Architecture
+## 🛠️ Tech Stack
+- **Primary Language**: Sol
+- **Environment**: Node.js / Python / Rust (as applicable)
+- **Key Features**: 
+  - Modular architecture
+  - Clean implementation of core logic
+  - Scalable design
 
-```mermaid
-graph TD
-    User[Buyer/Seller] -->|Transaction| Market[NFTMarketplace.sol]
-    Market -->|Checks Approval| ERC721[IERC721 Standard]
-    Market -->|Transfers Eth| Seller[Original Owner]
-    Market -->|Transfers NFT| Buyer[New Owner]
+## 📂 Getting Started
+
+### Prerequisites
+- Ensure you have the latest version of the relevant runtime (Node.js, Python, or Rust) installed.
+
+### Installation
+```bash
+git clone https://github.com/skylerblue333/Sol-NFT-Marketplace.git
+cd Sol-NFT-Marketplace
 ```
 
-## Elite Features
-- **Reentrancy Guards**: Inherits OpenZeppelin's `ReentrancyGuard` for state safety.
-- **Gas Optimized**: Memory caching of storage variables (`Listing memory listedItem`).
-- **Pull over Push**: Safe low-level `.call{value: x}("")` for Ether transfers.
+### Usage
+Follow the specific language conventions to run the project (e.g., `npm install`, `cargo build`, or `pip install -r requirements.txt`).
+
+## 🛡️ License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+Built by [Skyler Blue](https://github.com/skylerblue333)
