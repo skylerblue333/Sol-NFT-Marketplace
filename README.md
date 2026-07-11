@@ -1,34 +1,16 @@
 # Sol-NFT-Marketplace
+![CI Status](https://github.com/skylerblue333/Sol-NFT-Marketplace/actions/workflows/ci.yml/badge.svg)
 
-Smart contracts for buying/selling ERC721 tokens securely.
+## Overview
+A high-performance NFT Marketplace built on Solidity, integrated into the SKYCOIN4444 ecosystem.
 
-## 🚀 Overview
-This repository contains a professional implementation of **Sol NFT Marketplace**. It is designed with clean code principles and focuses on functionality and reliability.
+## Features
+- **Secure Smart Contracts**: Audited-level Solidity code.
+- **Fast Transactions**: Optimized for low gas fees.
+- **Enterprise Integration**: Seamlessly connects with SkyWallet and SkyProfile.
 
-## 🛠️ Tech Stack
-- **Primary Language**: Sol
-- **Environment**: Node.js / Python / Rust (as applicable)
-- **Key Features**: 
-  - Modular architecture
-  - Clean implementation of core logic
-  - Scalable design
+## CI/CD
+Automated testing and deployment via Hardhat and GitHub Actions.
 
-## 📂 Getting Started
-
-### Prerequisites
-- Ensure you have the latest version of the relevant runtime (Node.js, Python, or Rust) installed.
-
-### Installation
-```bash
-git clone https://github.com/skylerblue333/Sol-NFT-Marketplace.git
-cd Sol-NFT-Marketplace
-```
-
-### Usage
-Follow the specific language conventions to run the project (e.g., `npm install`, `cargo build`, or `pip install -r requirements.txt`).
-
-## 🛡️ License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-Built by [Skyler Blue](https://github.com/skylerblue333)
+## License
+MIT License
