@@ -9,8 +9,8 @@
     "verify": "npm run compile && npm test"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "4.0.0",
-    "@openzeppelin/contracts": "4.9.3",
+    "@nomicfoundation/hardhat-toolbox": "6.1.2",
+    "@openzeppelin/contracts": "4.9.6",
     "hardhat": "2.29.1"
   }
 }
