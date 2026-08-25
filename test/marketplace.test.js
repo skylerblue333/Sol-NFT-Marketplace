@@ -1,5 +1,7 @@
-const { expect } = require("chai");
-const { ethers } = require("hardhat");
+import { expect } from "chai";
+import { network } from "hardhat";
+
+const { ethers } = await network.connect();
 
 describe("NFTMarketplace", function () {
   async function deploy() {
@@ -42,7 +44,7 @@ describe("NFTMarketplace", function () {
 
   it("does not change an existing listing fee when platform configuration changes", async function () {
     const fixture = await deploy();
-    const { owner, seller, buyer, nft, marketplace } = fixture;
+    const { owner, buyer, nft, marketplace } = fixture;
     const price = await list(fixture);
 
     expect((await marketplace.listings(await nft.getAddress(), 1)).feeBps).to.equal(250);
