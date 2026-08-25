@@ -1,44 +1,51 @@
-<!-- PORTFOLIO PROJECT PROFILE: maintained by the repository owner -->
+# Sky NFT Marketplace Contract
 
-## Project profile and code-audit snapshot
+**Status: engineering beta / smart-contract lab.** This repository contains a bounded ETH/ERC-721 fixed-price marketplace contract with a Hardhat verification suite. It is not evidence of a deployed marketplace, audited protocol, token launch, or production financial service.
 
-**What this is:** **Sol-NFT-Marketplace** is a public repository described as: “Smart contracts for buying/selling ERC721 tokens securely. #SkyCoin4444 #AI #Blockchain #DevOps #Innovation” Its dominant language signals are **Python (2 files), JavaScript (1 files)**.
+## Implemented contract behavior
 
-**Why it has value:** Its value is best understood through the implementation evidence currently present in the repository: **19 tracked files** were observed in the shallow audit, with the source structure and existing documentation providing the project’s specific context. This README does not treat a prototype, experiment, or archive as a production system without supporting evidence.
+- list an ERC-721 token only when the caller owns it and has approved the marketplace
+- positive fixed-price ETH listings
+- listing-time snapshot of the platform fee so later fee changes do not alter existing seller terms
+- seller cancellation
+- exact-payment settlement
+- stale ownership and revoked-approval checks at settlement
+- checks-effects-interactions plus OpenZeppelin `ReentrancyGuard`
+- seller self-purchase rejection
+- configurable platform fee capped at 10%
+- configurable non-zero fee recipient
+- owner-only configuration and explicit ownership transfer
+- deletion of a listing before NFT/payment external calls, with transaction-wide rollback on failure
 
-**Implementation evidence:** 1 test-related file(s) detected; 2 dependency or package manifest(s) detected; 2 build/CI/infrastructure signal(s) detected; and 3 documentation or governance file(s) detected. Test filenames observed include `tests/test_main.py`. Dependency or package files include `package.json`, `requirements.txt`. Build, CI, or infrastructure signals include `Dockerfile`, `.github/workflows/ci.yml`.
+## Verification
 
-**Current status:** The repository is tracked on the `main` branch. The existing source tree, configuration, tests, workflows, and documentation remain authoritative for supported behavior and maturity. A code audit is not a production-readiness certification, and the presence of a test or workflow file does not establish that all checks pass.
+```bash
+npm install --ignore-scripts --no-fund
+npm run compile
+npm test
+npm audit --audit-level=high
+```
 
-**Relationship to the wider portfolio:** This repository is one focused component of the broader Skyler Blue Spillers portfolio across AI, software engineering, cloud and DevOps, cybersecurity, blockchain, finance, education, social systems, and creative work. It may provide a service boundary, implementation pattern, experiment, archive, or reusable idea for related repositories. Treat repositories as technical dependencies only where documented interfaces and verified project requirements support that relationship.
+The test suite deploys a local `TestNFT` fixture and verifies successful settlement, fee snapshots, stale listings, cancellation, exact payments, self-purchase rejection, fee bounds, access control, and ownership transfer.
 
-**Quality and security note:** No obvious secret-like pattern was detected by the limited static scan; this is not a substitute for a security audit. No TODO/FIXME marker was detected in the scanned text files.
+## Local example
 
----
+This repository is intentionally contract-only. Hardhat provides the local execution environment:
 
-# Sol Nft Marketplace
+```bash
+npx hardhat test
+```
 
-![GitHub stars](https://img.shields.io/github/stars/skylerblue333/Sol-NFT-Marketplace?style=flat-square)
-![GitHub license](https://img.shields.io/github/license/skylerblue333/Sol-NFT-Marketplace?style=flat-square)
+There is no production network configuration or deploy script in the verified product boundary.
 
-## 🌟 Overview
-**Sol-NFT-Marketplace** is a professional-grade project within the **SkyCoin4444** ecosystem. It focuses on delivering high-value solutions in the domain of **JavaScript, Python, Solidity**.
+## SKYCOIN4444 integration
 
-## 🚀 Key Features
-- **Scalable Architecture**: Designed for enterprise-level growth and performance.
-- **Modern Standards**: Implements best practices for clean code and maintainability.
-- **Robust Integration**: Built to work seamlessly within modern cloud-native environments.
+A future marketplace application can integrate this contract through a separately reviewed deployment adapter and frontend/indexer. Deployment tooling must pin a chain, RPC provider, deployer identity, constructor values, verified source code, contract address, and network-specific security controls. Do not copy contract logic into the flagship application; consume a verified deployed address and ABI through a stable adapter.
 
-## 🛠️ Technology Stack
-- **Primary Domain**: JavaScript, Python, Solidity
-- **Ecosystem**: SkyCoin4444 Digital Platform
+## Explicit limitations
 
-## 📂 Structure
-The project is organized into a modular structure to ensure clarity and ease of development.
+This contract has **not** been independently audited and no mainnet/testnet deployment is claimed. It does not implement auctions, bids, offers, royalties/EIP-2981 distribution, ERC-1155, ERC-20 payments, escrow, off-chain signed orders, upgradeability, pausability, sanctions/compliance controls, dispute resolution, metadata verification, creator identity, collection allowlists, marketplace indexing, frontend hosting, wallet custody, or production monitoring.
 
-## 👨‍💻 Author
-**Skyler Blue Spillers**
-*Professional Chess Player & Software Engineer*
+The owner remains a trusted administrative role for fee configuration and ownership transfer. Production use would require independent smart-contract review, deployment-key governance, network-specific testing, operational monitoring, incident procedures, and legal/compliance review appropriate to the marketplace.
 
----
-*Powered by SkyCoin4444*
+See `SECURITY.md` and `CHANGELOG.md` for the current boundary and history.
