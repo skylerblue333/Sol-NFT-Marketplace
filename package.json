@@ -2,6 +2,7 @@
   "name": "sky-nft-marketplace-contract",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Engineering-beta ETH/ERC-721 marketplace contract and Hardhat test lab",
   "scripts": {
     "compile": "hardhat compile",
@@ -9,8 +10,8 @@
     "verify": "npm run compile && npm test"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "6.1.2",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "3.0.7",
     "@openzeppelin/contracts": "4.9.6",
-    "hardhat": "2.29.1"
+    "hardhat": "3.14.0"
   }
 }
