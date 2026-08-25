@@ -1,9 +1,20 @@
 {
-  "name": "sol-nft-marketplace",
-  "version": "3.0.0",
+  "name": "sky-nft-marketplace-contract",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Engineering-beta ETH/ERC-721 marketplace contract and Hardhat test lab",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "verify": "npm run compile && npm test"
+  },
   "devDependencies": {
-    "hardhat": "^2.19.1",
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "@openzeppelin/contracts": "^4.9.3"
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "3.0.7",
+    "@openzeppelin/contracts": "4.9.6",
+    "hardhat": "3.14.0"
+  },
+  "overrides": {
+    "serialize-javascript": "7.1.0"
   }
 }

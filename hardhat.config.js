@@ -1,8 +1,7 @@
-require("@nomicfoundation/hardhat-toolbox");
+import { defineConfig } from "hardhat/config";
+import hardhatToolboxMochaEthers from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
 
-module.exports = {
-  solidity: "0.8.20",
-  networks: {
-    hardhat: {}
-  }
-};
+export default defineConfig({
+  plugins: [hardhatToolboxMochaEthers],
+  solidity: "0.8.20"
+});
