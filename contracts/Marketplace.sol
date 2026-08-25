@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 /// @notice Bounded ETH/ERC-721 marketplace engineering lab for SKYCOIN4444.
 /// @dev Listings snapshot their fee rate so platform configuration changes cannot alter existing seller terms.
