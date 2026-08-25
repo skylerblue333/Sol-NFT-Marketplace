@@ -13,5 +13,8 @@
     "@nomicfoundation/hardhat-toolbox-mocha-ethers": "3.0.7",
     "@openzeppelin/contracts": "4.9.6",
     "hardhat": "3.14.0"
+  },
+  "overrides": {
+    "serialize-javascript": "7.1.0"
   }
 }
